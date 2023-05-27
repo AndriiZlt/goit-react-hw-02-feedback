@@ -1,6 +1,5 @@
-import Feedback from '../Feedbacks/FeedbackBtns';
+import Feedback from '../Feedback/Feedback';
 import React from 'react';
-import {} from './App.styled';
 
 export const App = () => {
   return (

@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Title, StatTitle, BtnList, Button } from './Feedbacks.styled';
+import { Title, StatTitle } from './Feedback.styled';
 import Statistics from 'components/Statistics/Statistics';
+import BtnsList from 'components/BtnsList/BtnsList';
+
 class Feedback extends React.Component {
   state = {
     good: 0,
@@ -35,17 +37,7 @@ class Feedback extends React.Component {
     return (
       <div>
         <Title>Please leave feedback</Title>
-        <BtnList>
-          <Button type="button" id="good" onClick={this.clickHandler}>
-            Good
-          </Button>
-          <Button type="button" id="neutral" onClick={this.clickHandler}>
-            Neutral
-          </Button>
-          <Button type="button" id="bad" onClick={this.clickHandler}>
-            Bad
-          </Button>
-        </BtnList>
+        <BtnsList onClick={this.clickHandler} />
         <StatTitle>Statistics</StatTitle>
         <Statistics
           good={this.state.good}
