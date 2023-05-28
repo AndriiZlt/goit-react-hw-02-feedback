@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import { StatList, Stat } from './Statistics.styled';
 
 class Statistics extends React.Component {
+  state = {
+    total: 0,
+  };
+
   render() {
     return (
       <StatList>
@@ -14,6 +18,12 @@ class Statistics extends React.Component {
         </Stat>
         <Stat>
           Bad: <span>{this.props.bad}</span>
+        </Stat>
+        <Stat>
+          Total: <span>{this.props.total}</span>
+        </Stat>
+        <Stat>
+          Positive feedbacks: <span>{this.props.positivePercentage}</span>
         </Stat>
       </StatList>
     );
