@@ -9,7 +9,6 @@ class App extends React.Component {
   };
 
   clickHandler = e => {
-    console.log(e.currentTarget.id);
     const clickedBtn = e.currentTarget.id;
     this.setState(prevState => ({
       [clickedBtn]: prevState[clickedBtn] + 1,
