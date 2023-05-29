@@ -1,4 +1,4 @@
-import Feedback from '../Feedback/Feedback';
+import FeedbackApp from '../Feedback/Feedback';
 import React from 'react';
 
 class App extends React.Component {
@@ -9,6 +9,7 @@ class App extends React.Component {
   };
 
   clickHandler = e => {
+    console.log(e.currentTarget.id);
     const clickedBtn = e.currentTarget.id;
     this.setState(prevState => ({
       [clickedBtn]: prevState[clickedBtn] + 1,
@@ -28,7 +29,7 @@ class App extends React.Component {
           fontFamily: 'Roboto',
         }}
       >
-        <Feedback stats={this.state} clickHandler={this.clickHandler} />
+        <FeedbackApp stats={this.state} clickHandler={this.clickHandler} />
       </div>
     );
   }

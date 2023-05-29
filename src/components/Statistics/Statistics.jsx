@@ -1,33 +1,30 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { StatList, Stat } from './Statistics.styled';
 
-class Statistics extends React.Component {
-  state = {
-    total: 0,
-  };
+export const Statistics = ({ options, totalFeedbacks, positivePercentage }) => {
+  return (
+    <StatList>
+      <Stat>
+        Good: <span>{options.good}</span>
+      </Stat>
+      <Stat>
+        Neutral: <span>{options.neutral}</span>
+      </Stat>
+      <Stat>
+        Bad: <span>{options.bad}</span>
+      </Stat>
+      <Stat>
+        Total: <span>{totalFeedbacks}</span>
+      </Stat>
+      <Stat>
+        Positive feedbacks: <span>{positivePercentage}</span>
+      </Stat>
+    </StatList>
+  );
+};
 
-  render() {
-    return (
-      <StatList>
-        <Stat>
-          Good: <span>{this.props.good}</span>
-        </Stat>
-        <Stat>
-          Neutral: <span>{this.props.neutral}</span>
-        </Stat>
-        <Stat>
-          Bad: <span>{this.props.bad}</span>
-        </Stat>
-        <Stat>
-          Total: <span>{this.props.total}</span>
-        </Stat>
-        <Stat>
-          Positive feedbacks: <span>{this.props.positivePercentage}</span>
-        </Stat>
-      </StatList>
-    );
-  }
-}
-
-export default Statistics;
+Statistics.propTypes = {
+  options: PropTypes.object.isRequired,
+  totalFeedbacks: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.string.isRequired,
+};
