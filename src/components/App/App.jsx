@@ -1,4 +1,4 @@
-import FeedbackApp from '../Feedback/Feedback';
+import FeedbackApp from '../FeedbackApp/Feedback';
 import React from 'react';
 
 class App extends React.Component {
